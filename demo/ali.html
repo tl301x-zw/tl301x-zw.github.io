@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 50px;
+            border: 1px solid #000;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: 100%;
+            background-position-y: 0px;
+        }
+        #box0{
+            background-image: url(https://img.alicdn.com/tfs/TB1VAEAdEY1gK0jSZFCXXcwqXXa-144-3024.png);
+        }
+        #box1{
+            background-image: url(https://img.alicdn.com/tfs/TB1ajd_c1bviK0jSZFNXXaApXXa-144-3024.png);
+        }
+        #box2{
+            background-image: url(https://img.alicdn.com/tfs/TB1WdW2cKbviK0jSZFNXXaApXXa-144-3024.png);
+        }
+        #box3{
+            background-image: url(https://img.alicdn.com/tfs/TB1i1j4dQY2gK0jSZFgXXc5OFXa-144-3024.png);
+        }
+        #box4{
+            background-image: url(https://img.alicdn.com/tfs/TB1UrkuduP2gK0jSZFoXXauIVXa-144-3024.png);
+        }
+        p,a{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box0"></div>
+<div class="box" id="box1"></div>
+<div class="box" id="box2"></div>
+<div class="box" id="box3"></div>
+<div class="box" id="box4"></div>
+<p>触摸上图</p>
+<p>以上使用图片精灵</p>
+<a href="../index.html">返回上一页</a>
+<script>
+    f('box0');
+    f('box1');
+    f('box2');
+    f('box3');
+    f('box4')
+    function f(id) {
+        var box0 =document.getElementById(id);
+        var num=0;
+        var x;
+        var x2;
+        function f1(){
+            box0.style.backgroundPositionY=num*-100+'px';
+            num++;
+            if (num>20){
+                num=20;
+                clearInterval(x)
+            }
+        }
+        function f2(){
+            box0.style.backgroundPositionY=num*-100+'px';
+            num--;
+            if (num<0){
+                clearInterval(x2);
+                num=0
+            }
+        }
+        box0.onmouseover = function () {
+            clearInterval(x2)
+            x=setInterval(f1,1000/60);
+        };
+        box0.onmouseout = function () {
+            clearInterval(x)
+            x2=setInterval(f2,1000/60);
+        }
+    }
+</script>
+</body>
+</html>
