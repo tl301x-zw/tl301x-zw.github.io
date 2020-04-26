@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.box{
+    margin: 100px auto;
+    height: 500px;
+    width: 400px;
+    border: 10px solid #000;
+    position: relative;
+    perspective: 600px ;
+
+
+}
+.box0{
+    border-radius: 100% ;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    transform-origin: center center 100px;
+    transform-style: preserve-3d;
+    transition: 2s ease-in-out;
+}
+.box0>div{
+    /*backface-visibility: hidden;*/
+    border-radius: 100% ;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 200px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+
+
+}
+.box1{background: #79accd;transform-origin: left; transform: rotateY(-90deg);}
+.box2{background: #f4dd90;transform-origin: right; transform: rotateY(90deg);}
+.box3{background: #4df472;transform-origin: top; transform: rotateX(90deg);}
+.box4{background: #f46a52;transform-origin: bottom; transform: rotateX(-90deg);}
+.box5{background: #86a0fa;transform:translateZ(200px);}
+.box6{background: #f41032
+}
+
+.box:hover .box0{
+    transform: rotateY(360deg) rotateX(-720deg) rotateZ(-360deg) translateZ(200px);
+}
+
+.hover{
+    position: absolute;
+    padding: 5px ;
+    top: 30px;
+    left: 20px;
+    border: 1px solid #000;
+}
+
+.back{
+    padding: 5px ;
+    top: 90px;
+    left: 20px;
+}
+.hover a{
+    color: #86a0fa;
+
+}
